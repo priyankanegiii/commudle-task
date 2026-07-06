@@ -1,9 +1,31 @@
-.header{
-    @apply bg-slate-950 border-b border-gray-300 text-white p-4  shadow-md;
+.navbar{
+    @apply bg-slate-950 border-b border-gray-200/50 text-white p-2 shadow-md;
+    @apply flex flex-row justify-between items-center;
 }
 
 .heading{
-    @apply text-2xl font-bold text-center  mb-4;
+    @apply text-2xl font-bold text-center p-2;
+}
+
+.filter{
+    @apply flex items-center gap-3 ;
+}
+.select-page{
+    @apply  w-24 px-3 py-1  m-2;
+    @apply  text-white bg-slate-950  hover:cursor-pointer;
+
+}
+
+.gitpage-link{
+    @apply cursor-pointer text-white hover:underline;
+    @apply p-2 text-sm;
+
+}
+
+.bookmarkpage-link{
+    @apply cursor-pointer text-white hover:underline;
+    @apply p-2 text-sm;
+
 }
 .body{
    
@@ -44,19 +66,13 @@
     @apply flex justify-between items-center;
     @apply mt-auto;
 }
-.filter{
-    @apply flex flex-row gap-4 mt-5;
+
+
+.links{
+    @apply flex gap-4 ;
 }
 
-.filter-tag{
-    @apply text-lg font-semibold text-gray-700;
-    @apply m-2;
-}
-.select-page{
-    @apply border w-24 rounded-md  m-2;
-    @apply bg-gray-200 text-gray-700;
 
-}
 .reactions{
      @apply text-gray-700 mx-4;
      @apply flex flex-row gap-2;
@@ -72,23 +88,16 @@
     @apply text-xs;
 }
 
-.main{
-    @apply flex flex-row
+
+.side{
+    @apply flex flex-row items-center justify-between gap-5;
+    @apply md:flex-row md:items-center md:justify-between gap-4;
 }
 
-.gitpage-link{
-    @apply cursor-pointer text-blue-500 hover:underline;
-    @apply m-3 text-lg;
 
-}
 .bookmark{
     @apply text-white mx-5 h-5 w-5;
     @apply hover:text-blue-500;
     @apply hover:cursor-pointer;
 }
 
-.bookmarkpage-link{
-    @apply cursor-pointer text-blue-500 hover:underline;
-    @apply m-3 text-lg;
-
-}

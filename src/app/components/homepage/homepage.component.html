@@ -1,8 +1,7 @@
-<div class="header">
+<div class="navbar">
   <p class="heading">Dev.to Articles</p>
   <div class="side">
     <div class="filter">
-      <p class="filter-tag">Filter by tag:</p>
       <select class="select-page" (change)="filterArticle($event)">
         <option value="">all tags</option>
         @for (tag of tagList; track tag) {
@@ -11,56 +10,50 @@
       </select>
     </div>
     <div class="links">
-      <a routerLink="/gitpage" class="gitpage-link"> Git Page  </a>
-    <a routerLink="/bookmarkpage" class="bookmarkpage-link">
-      Bookmark Page 
-    </a>
-
+      <a routerLink="/gitpage" class="gitpage-link"> Git Page </a>
+      <a routerLink="/bookmarkpage" class="bookmarkpage-link">
+        Bookmark Page
+      </a>
     </div>
-    
   </div>
 </div>
-<div class="main">
-  <div class="body">
-    @for (article of filteredArticles; track article) {
-      <div class="card">
-        <div>
-          @if (article.cover_image) {
-            <img
-              src="{{ article.cover_image }}"
-              alt="profile image"
-              class="profile-image"
-            />
-          } 
-        </div>
-        <div class="content">
-          <h2 class="title">{{ article.title }}</h2>
-          <div class="tags">
-            @for (tag of article.tag_list; track tag) {
-              <span class="tag">#{{ tag }}</span>
-            }
-          </div>
-        </div>
-        <div class="footer">
-          <div class="reactions">
-            <p class="reaction">
-              {{ article.public_reactions_count }} reactions
-            </p>
-            <p class="reaction">{{ article.comments_count }} comments</p>
-          </div>
-          <p class="time">{{ article.reading_time_minutes }} min read</p>
-        </div>
-        <div>
-          <i
-            class="fa-bookmark"
-            [class.fa-regular]="!article.bookmarked"
-            [class.fa-solid]="article.bookmarked"
-            (click)="toggleArticleBookmark(article)"
-          >
-          </i>
+
+<div class="body">
+  @for (article of filteredArticles; track article) {
+    <div class="card">
+      <div>
+        @if (article.cover_image) {
+          <img
+            src="{{ article.cover_image }}"
+            alt="profile image"
+            class="profile-image"
+          />
+        }
+      </div>
+      <div class="content">
+        <h2 class="title">{{ article.title }}</h2>
+        <div class="tags">
+          @for (tag of article.tag_list; track tag) {
+            <span class="tag">#{{ tag }}</span>
+          }
         </div>
       </div>
-    }
-  </div>
-  
+      <div class="footer">
+        <div class="reactions">
+          <p class="reaction">{{ article.public_reactions_count }} reactions</p>
+          <p class="reaction">{{ article.comments_count }} comments</p>
+        </div>
+        <p class="time">{{ article.reading_time_minutes }} min read</p>
+      </div>
+      <div>
+        <i
+          class="fa-bookmark"
+          [class.fa-regular]="!article.bookmarked"
+          [class.fa-solid]="article.bookmarked"
+          (click)="toggleArticleBookmark(article)"
+        >
+        </i>
+      </div>
+    </div>
+  }
 </div>
