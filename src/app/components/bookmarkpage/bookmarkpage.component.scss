@@ -86,11 +86,9 @@
 }
 .no-bookmarks{
     @apply flex flex-col items-center justify-center;
-    @apply h-[50vh] ml-[19rem];
+    @apply sm:m-auto p-5 md:ml-[5rem] xl:ml-[20rem]  p-5 text-gray-500 text-center;
 }
-.no-bookmark-heading{
-      @apply text-lg text-gray-500/40 text-center;
-}
+
 
 .message{
     @apply text-sm text-white text-center;

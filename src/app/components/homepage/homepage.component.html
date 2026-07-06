@@ -1,5 +1,24 @@
 <div class="header">
   <p class="heading">Dev.to Articles</p>
+  <div class="side">
+    <div class="filter">
+      <p class="filter-tag">Filter by tag:</p>
+      <select class="select-page" (change)="filterArticle($event)">
+        <option value="">all tags</option>
+        @for (tag of tagList; track tag) {
+          <option [value]="tag">{{ tag }}</option>
+        }
+      </select>
+    </div>
+    <div class="links">
+      <a routerLink="/gitpage" class="gitpage-link"> Git Page  </a>
+    <a routerLink="/bookmarkpage" class="bookmarkpage-link">
+      Bookmark Page 
+    </a>
+
+    </div>
+    
+  </div>
 </div>
 <div class="main">
   <div class="body">
@@ -43,19 +62,5 @@
       </div>
     }
   </div>
-  <div class="side">
-    <div class="filter">
-      <p class="filter-tag">Filter by tag:</p>
-      <select class="select-page" (change)="filterArticle($event)">
-        <option value="">all tags</option>
-        @for (tag of tagList; track tag) {
-          <option [value]="tag">{{ tag }}</option>
-        }
-      </select>
-    </div>
-    <a routerLink="/gitpage" class="gitpage-link"> Git Page → </a>
-    <a routerLink="/bookmarkpage" class="bookmarkpage-link">
-      Bookmark Page →
-    </a>
-  </div>
+  
 </div>

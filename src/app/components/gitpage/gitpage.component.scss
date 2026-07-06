@@ -22,11 +22,11 @@
 }
 
 .no-results {
-  @apply p-5 mt-[8rem] ml-[19rem] text-gray-500 text-center;
+  @apply p-5 m-auto text-gray-500 text-center;
 }
 .container{
     @apply bg-slate-950 flex justify-center min-h-screen; 
-    @apply mt-24 p-5;
+    @apply mt-[17rem] p-5;
     
    
 }
@@ -86,8 +86,7 @@
     
 }
 .link{
-    @apply ml-[50rem];
-    
+    @apply flex gap-4 mt-4;
 }
 
 .bookmarkpage-link{
