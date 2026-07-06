@@ -6,11 +6,13 @@
     @for (article of filteredArticles; track article) {
       <div class="card">
         <div>
-          <img
-            src="{{ article.cover_image }}"
-            alt="profile image"
-            class="profile-image"
-          />
+          @if (article.cover_image) {
+            <img
+              src="{{ article.cover_image }}"
+              alt="profile image"
+              class="profile-image"
+            />
+          } 
         </div>
         <div class="content">
           <h2 class="title">{{ article.title }}</h2>
