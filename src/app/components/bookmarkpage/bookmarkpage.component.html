@@ -1,81 +1,73 @@
-<div class="bookmark-page"> 
-   <h2 class="heading">Your Bookmarks</h2>
-   <div>
-    <a routerLink="/gitpage" class="gitpage-link"> Git Page → </a>
-    <a routerLink="/" class="homepage-link">
-      Home Page →
-    </a>
-
-   </div>
-   
-@if(githubBookmarks.length <= 0 && articleBookmarks.length <= 0) {
-  <div class="no-bookmarks">
-    
-    <p class="message">You have not added any bookmarks yet.</p>
-  </div>
-}
-@else{ 
-
-   
-    
-@for (repo of githubBookmarks; track repo.id) {
-  <div class="repo">
-    <h4 class="repo-name">{{ repo.name }}</h4>
-    <p class="repo-description">{{ repo.description }}</p>
-
-    <div class="repo-stats">
-      <p class="repo-stat">Stars: {{ repo.stargazers_count }}</p>
-      <p class="repo-stat">Forks: {{ repo.forks_count }}</p>
-      <p class="repo-stat">Language: {{ repo.language }}</p>
+<div class="bookmark-page">
+  <div class="header">
+    <h2 class="heading">Your Bookmarks</h2>
+    <div class="links">
+      <a routerLink="/gitpage" class="gitpage-link"> Git Page → </a>
+      <a routerLink="/" class="homepage-link"> Home Page → </a>
     </div>
-    <div class="bookmark-repo">
-        <button (click)="removeGithub(repo)">remove</button>
-      <!-- <i
+  </div>
+
+  <div class="container">
+    @if (githubBookmarks.length <= 0 && articleBookmarks.length <= 0) {
+      <div class="no-bookmarks">
+        <p class="message">You have not added any bookmarks yet.</p>
+      </div>
+    } @else {
+      @for (repo of githubBookmarks; track repo.id) {
+        <div class="repo">
+          <h4 class="repo-name">{{ repo.name }}</h4>
+          <p class="repo-description">{{ repo.description }}</p>
+
+          <div class="repo-stats">
+            <p class="repo-stat">Stars: {{ repo.stargazers_count }}</p>
+            <p class="repo-stat">Forks: {{ repo.forks_count }}</p>
+            <p class="repo-stat">Language: {{ repo.language }}</p>
+          </div>
+          <div class="bookmark-repo">
+            <button (click)="removeGithub(repo)">remove</button>
+            <!-- <i
         class="fa-regular fa-bookmark bookmark"
         (click)="removeGithub(repo)"
       ></i> -->
-    </div>
-  </div>
-}
+          </div>
+        </div>
+      }
 
-
-
-@for (article of articleBookmarks; track article.id) {
-  <div class="card">
-    <div>
-      <img
-        src="{{ article.cover_image }}"
-        alt="profile image"
-        class="profile-image"
-      />
-    </div>
-    <div class="content">
-      <h2 class="title">{{ article.title }}</h2>
-      <div class="tags">
-        @for (tag of article.tag_list; track tag) {
-          <span class="tag">#{{ tag }}</span>
-        }
-      </div>
-    </div>
-    <div class="footer">
-      <div class="reactions">
-        <p class="reaction">{{ article.public_reactions_count }} reactions</p>
-        <p class="reaction">{{ article.comments_count }} comments</p>
-      </div>
-      <p class="time">{{ article.reading_time_minutes }} min read</p>
-    </div>
-    <div class="bookmark-article">
-     <button (click)="removeArticle(article)">remove</button>
-      <!-- <i
+      @for (article of articleBookmarks; track article.id) {
+        <div class="card">
+          <div>
+            <img
+              src="{{ article.cover_image }}"
+              alt="profile image"
+              class="profile-image"
+            />
+          </div>
+          <div class="content">
+            <h2 class="title">{{ article.title }}</h2>
+            <div class="tags">
+              @for (tag of article.tag_list; track tag) {
+                <span class="tag">#{{ tag }}</span>
+              }
+            </div>
+          </div>
+          <div class="footer">
+            <div class="reactions">
+              <p class="reaction">
+                {{ article.public_reactions_count }} reactions
+              </p>
+              <p class="reaction">{{ article.comments_count }} comments</p>
+            </div>
+            <p class="time">{{ article.reading_time_minutes }} min read</p>
+          </div>
+          <div class="bookmark-article">
+            <button (click)="removeArticle(article)">remove</button>
+            <!-- <i
         class="fa-regular fa-bookmark bookmark"
         (click)="removeArticle(article)"
       ></i> -->
-    </div>
+          </div>
+        </div>
+      }
+    }
   </div>
-}
-
-
-
-}
-
 </div>

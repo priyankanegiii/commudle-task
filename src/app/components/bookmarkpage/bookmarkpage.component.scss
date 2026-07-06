@@ -1,8 +1,21 @@
 .bookmark-page{
     @apply bg-slate-950;
 }
+.header {
+    @apply w-full p-3 bg-slate-950 border-b border-gray-700;
+    @apply flex flex-col items-center;
+    @apply fixed top-0 left-0 z-50;
+  
+}
 .heading{
     @apply text-2xl font-bold text-gray-700 text-center mt-1 p-5;
+   
+}
+.container{
+
+    @apply mt-24 p-5;
+    
+   
 }
 
 .card{
@@ -65,13 +78,17 @@
 
 .repo{
     @apply bg-dark-custome border border-gray-300/50 rounded-lg shadow-md p-4 m-4;
-    @apply flex flex-col text-white;
+    @apply flex flex-col text-white overflow-y-auto;
     @apply w-full md:w-[600px];
 }
 .repo-name{
     @apply text-lg font-semibold text-gray-700;
 }
-no-bookmark-heading{
+.no-bookmarks{
+    @apply flex flex-col items-center justify-center;
+    @apply h-[50vh] ml-[19rem];
+}
+.no-bookmark-heading{
       @apply text-lg text-gray-500/40 text-center;
 }
 
