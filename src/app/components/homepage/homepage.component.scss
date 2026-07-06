@@ -1,0 +1,94 @@
+.header{
+    @apply bg-slate-950 border-b border-gray-300 text-white p-4  shadow-md;
+}
+
+.heading{
+    @apply text-2xl font-bold text-center  mb-4;
+}
+.body{
+   
+    @apply m-5 p-4  rounded-lg shadow-md;
+    @apply h-screen w-[80%] overflow-y-auto;
+    @apply flex flex-col  items-center;
+
+}
+
+.card{
+    @apply bg-gray-400 border border-gray-300/50 rounded-lg shadow-md p-4 m-4 ;
+    @apply flex flex-col ;
+    @apply h-[500px] w-full max-w-4xl;
+    @apply transition-transform transform hover:scale-105;
+}
+.profile-image{
+    @apply  h-56 w-[95%] m-auto object-cover rounded-lg mb-4;
+}
+
+
+.title{
+    @apply text-2xl font-bold text-gray-800 p-4;
+}
+.content{
+    @apply text-center;
+}
+
+.tags{
+    @apply flex flex-wrap gap-4 mb-2 mx-5;
+}
+
+.tag{
+
+    @apply hover:text-blue-800 ;
+    @apply hover:border-blue-200 hover:cursor-pointer;
+}
+.footer{
+    @apply flex justify-between items-center;
+    @apply mt-auto;
+}
+.filter{
+    @apply flex flex-row gap-4 mt-5;
+}
+
+.filter-tag{
+    @apply text-lg font-semibold text-gray-700;
+    @apply m-2;
+}
+.select-page{
+    @apply border w-24 rounded-md  m-2;
+    @apply bg-gray-200 text-gray-700;
+
+}
+.reactions{
+     @apply text-gray-700 mx-4;
+     @apply flex flex-row gap-2;
+}
+.reaction{
+    @apply p-1 text-sm ;
+    @apply  hover:text-black ;
+    @apply  hover:cursor-pointer;
+}
+
+.time{
+    @apply text-gray-500;
+    @apply text-xs;
+}
+
+.main{
+    @apply flex flex-row
+}
+
+.gitpage-link{
+    @apply cursor-pointer text-blue-500 hover:underline;
+    @apply m-3 text-lg;
+
+}
+.bookmark{
+    @apply text-white mx-5 h-5 w-5;
+    @apply hover:text-blue-500;
+    @apply hover:cursor-pointer;
+}
+
+.bookmarkpage-link{
+    @apply cursor-pointer text-blue-500 hover:underline;
+    @apply m-3 text-lg;
+
+}

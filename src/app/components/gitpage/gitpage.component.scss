@@ -1,0 +1,101 @@
+.header {
+  @apply w-full p-3 bg-slate-950 border-b border-gray-700;
+  @apply flex flex-col items-center;
+ 
+}
+
+.heading {
+  @apply text-3xl font-bold text-white mb-6;
+}
+
+.searchbar {
+  @apply relative w-[420px] max-w-[90%];
+}
+
+.search-input {
+  @apply w-full py-3 rounded-lg border border-gray-300;
+}
+
+.search-results {
+  @apply absolute top-full left-0 w-full bg-white rounded-lg shadow-lg mt-1;
+}
+
+.no-results {
+  @apply ml-[18rem]  p-5 text-gray-500 text-center;
+}
+.container{
+    @apply bg-slate-950 flex justify-center min-h-screen; ;
+    
+   
+}
+
+
+.body{
+    @apply w-[80%] flex flex-col items-center pt-6  ;
+}
+
+
+.user-details{
+    @apply w-[50%]  items-center;
+}
+.user{
+    @apply w-full bg-slate-950 rounded-lg shadow-md p-4 mt-4;
+}
+
+.info{
+    @apply text-sm text-gray-300/40 mt-4;
+}
+.user-info{
+    @apply flex  flex-row items-center;
+}
+.profile-image{
+    @apply w-64 h-64 rounded-full mr-4;
+}
+.username{
+    @apply text-sm  text-red-500;
+}
+.name{
+    @apply text-lg font-semibold text-gray-700;
+}
+.bio{
+    @apply p-3 text-gray-600;
+}
+.stats{
+    @apply text-sm bg-red-50 text-red-500 p-2 rounded-lg mt-2;
+    @apply w-[400px];
+    @apply flex justify-between shadow-md p-1 ;
+}
+.repos-heading{
+    @apply text-lg  font-semibold text-gray-700 mt-4;
+}
+
+.repo{
+    @apply bg-dark-custome border border-gray-300/50 rounded-lg shadow-md p-4 mt-2;
+    @apply flex flex-col text-white;
+    @apply w-full md:w-[600px];
+}
+.repo-name{
+    @apply text-lg font-semibold text-gray-700;
+}
+
+.bookmark{
+    @apply text-white h-5 w-5;
+
+    
+}
+.link{
+    @apply ml-[50rem];
+    
+}
+
+.bookmarkpage-link{
+    @apply text-gray-300 hover:text-white;
+    @apply mt-4;
+    @apply text-lg font-semibold;
+}
+
+.homepage-link{
+    @apply text-gray-300 hover:text-white;
+    @apply mt-4 ml-5;
+    @apply text-lg font-semibold;
+}

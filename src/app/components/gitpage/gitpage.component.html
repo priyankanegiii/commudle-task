@@ -1,0 +1,94 @@
+<div class="header">
+  <h2 class="heading">Github</h2>
+
+  <div class="searchbar">
+    <input
+      type="text"
+      placeholder="Search for a user"
+      class="search-input"
+      [formControl]="searchInput"
+    />
+
+    @if (filteredUsers.length > 0) {
+      <ul class="search-results">
+        @for (user of filteredUsers; track user) {
+          <li class="search-result" (click)="showProfile(user)">
+            {{ user }}
+          </li>
+        }
+      </ul>
+    }
+  </div>
+  <div class="link">
+    <a routerLink="/bookmarkpage" class="bookmarkpage-link">
+      Bookmark Page →
+    </a>
+    <a routerLink="/" class="homepage-link"> Home Page → </a>
+  </div>
+</div>
+
+<div class="container">
+  @if (!gitProfile) {
+    <p class="no-results">No user selected</p>
+  } @else if (gitProfile && gitRepos.length === 0) {
+    <p class="no-results">No repositories to display</p>
+  } @else {
+    <div class="user">
+      <div class="user-info">
+        <div>
+          <img
+            [src]="gitProfile?.avatar_url"
+            alt="profile image"
+            class="profile-image"
+          />
+        </div>
+
+        <div class="user-details">
+          <h2 class="username">Username: {{ gitProfile.login }}</h2>
+          <p class="name">{{ gitProfile.name }}</p>
+          @if (gitProfile.bio) {
+            <p class="bio">{{ gitProfile.bio }}</p>
+          }
+
+          <div class="stats">
+            <p class="stat">Followers: {{ gitProfile.followers }}</p>
+            <p class="stat">Following: {{ gitProfile.following }}</p>
+            <p class="stat">Public Repos: {{ gitProfile.public_repos }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="user-repos">
+        <h3 class="repos-heading">Repositories</h3>
+
+        @if (gitRepos.length === 0) {
+          <p class="info">No repositories to display</p>
+        } @else {
+          <div class="repos-list">
+            @for (repo of gitRepos; track repo.id) {
+              <div class="repo">
+                <h4 class="repo-name">{{ repo.name }}</h4>
+                <p class="repo-description">{{ repo.description }}</p>
+
+                <div class="repo-stats">
+                  <p class="repo-stat">Stars: {{ repo.stargazers_count }}</p>
+                  <p class="repo-stat">Forks: {{ repo.forks_count }}</p>
+                  <p class="repo-stat">Language: {{ repo.language }}</p>
+                </div>
+                <div class="bookmark-container">
+                  <i
+                    class="fa-bookmark"
+                    [class.fa-regular]="!repo.bookmarked"
+                    [class.fa-solid]="repo.bookmarked"
+                    (click)="toggleGithubBookmark(repo)"
+                  >
+                  </i>
+                </div>
+              </div>
+            }
+          </div>
+        }
+      </div>
+    </div>
+  }
+</div>
