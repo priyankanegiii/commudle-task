@@ -1,6 +1,6 @@
 <div class="navbar">
   <p class="heading">Dev.to Articles</p>
-  <div class="side">
+  <div class="nav-right">
     <div class="filter">
       <select class="select-page" (change)="filterArticle($event)">
         <option value="">all tags</option>
@@ -27,32 +27,44 @@
             src="{{ article.cover_image }}"
             alt="profile image"
             class="profile-image"
+            (click)="navigateToArticle(article.url)"
           />
         }
       </div>
-      <div class="content">
+      <div class="content" (click)="navigateToArticle(article.url)">
         <h2 class="title">{{ article.title }}</h2>
-        <div class="tags">
-          @for (tag of article.tag_list; track tag) {
-            <span class="tag">#{{ tag }}</span>
-          }
-        </div>
+        <p class="description">{{ article.description }}</p>
       </div>
+      <div class="tags">
+        @for (tag of article.tag_list; track tag) {
+          <span class="tag">#{{ tag }}</span>
+        }
+      </div>
+
       <div class="footer">
         <div class="reactions">
-          <p class="reaction">{{ article.public_reactions_count }} reactions</p>
-          <p class="reaction">{{ article.comments_count }} comments</p>
+          <p class="reaction">
+            <i class="fa-solid fa-hands-clapping"></i>
+            {{ article.public_reactions_count }} reactions
+          </p>
+          <p class="reaction">
+            <i class="fa-solid fa-comment"></i>
+            {{ article.comments_count }} comments
+          </p>
         </div>
-        <p class="time">{{ article.reading_time_minutes }} min read</p>
-      </div>
-      <div>
-        <i
-          class="fa-bookmark"
-          [class.fa-regular]="!article.bookmarked"
-          [class.fa-solid]="article.bookmarked"
-          (click)="toggleArticleBookmark(article)"
-        >
-        </i>
+        <div class="reading-time-bookmark">
+          <p class="time">published on {{article.published_timestamp.slice(8,10) + '-' +article.published_timestamp.slice(5,7) + '-' + article.published_timestamp.slice(0,4)  }}</p>
+          <p class="time">{{ article.reading_time_minutes }} min read</p>
+          <div>
+            <i
+              class="fa-bookmark"
+              [class.fa-regular]="!article.bookmarked"
+              [class.fa-solid]="article.bookmarked"
+              (click)="toggleArticleBookmark(article)"
+            >
+            </i>
+          </div>
+        </div>
       </div>
     </div>
   }

@@ -63,7 +63,9 @@ toggleArticleBookmark(article: DevToArticle) {
   }
 }
   
-
+navigateToArticle(url: string) {
+  window.open(url, '_blank');
+}
 
   
 

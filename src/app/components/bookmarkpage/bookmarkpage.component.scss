@@ -1,39 +1,42 @@
-.bookmark-page{
-    @apply bg-slate-950;
+.navbar {
+  @apply w-full h-[6.5%] bg-slate-950 border-b border-gray-200/50 text-white shadow-md;
+  @apply flex flex-row justify-between items-center gap-[60rem] p-2;
+  @apply fixed top-0 left-0 z-50;                                    
+ 
 }
-.header {
-    @apply w-full p-3 bg-slate-950 border-b border-gray-700;
-    @apply flex flex-col items-center;
-    @apply fixed top-0 left-0 z-50;
-  
+.heading {
+  @apply text-xs md:text-lg lg:text-xl font-bold text-center p-2;
 }
-.heading{
-    @apply text-2xl font-bold text-gray-700 text-center mt-1 p-5;
-   
-}
+
 .container{
-
-    @apply mt-24 p-5;
-    
-   
+    @apply w-full h-[93.5%];
+    @apply py-[70px]  rounded-lg shadow-md;
+    @apply min-h-screen flex flex-col items-start justify-start gap-5;
 }
+                      
+//article bookmarks
 
-.card{
-    @apply bg-gray-400 border border-gray-300/50 rounded-lg shadow-md p-4 m-4 ;
-    @apply flex flex-col ;
-    @apply h-[500px] w-full max-w-4xl;
+.article{
+    @apply bg-gray-200 border border-gray-300/50 rounded-lg shadow-md p-4 m-4;
+    @apply flex flex-col;
+    @apply h-auto w-full max-w-4xl;
     @apply transition-transform transform hover:scale-105;
 }
-.profile-image{
-    @apply  h-56 w-[95%] m-auto object-cover rounded-lg mb-4;
-}
 
+.profile-image{
+    @apply  h-56 w-[95%] m-auto object-cover rounded-lg;
+}
 
 .title{
     @apply text-2xl font-bold text-gray-800 p-4;
 }
+
 .content{
-    @apply text-center;
+    @apply flex flex-col gap-2;
+}
+
+.description{
+    @apply text-gray-700 px-5;
 }
 
 .tags{
@@ -41,75 +44,76 @@
 }
 
 .tag{
-
-    @apply hover:text-blue-800 ;
+    @apply text-sm text-gray-600 hover:text-blue-800;
     @apply hover:border-blue-200 hover:cursor-pointer;
 }
+
 .footer{
     @apply flex justify-between items-center;
-    @apply mt-auto;
+    @apply mt-5;
 }
-
 
 .reactions{
      @apply text-gray-700 mx-4;
      @apply flex flex-row gap-2;
 }
+
 .reaction{
     @apply p-1 text-sm ;
-    @apply  hover:text-black ;
+    @apply  hover:text-black/80 hover:bg-gray-300/50 hover:rounded-lg;
     @apply  hover:cursor-pointer;
 }
-.main{
-    @apply  bg-slate-950;
-    @apply w-full flex flex-col items-center  min-h-screen ;
-}
-.body{
-    @apply  bg-slate-950;
-    @apply w-full flex flex-col items-center  min-h-screen ;
+
+.reading-time-bookmark{
+    @apply flex justify-between items-center;
+    @apply mx-5 gap-5;
+
 }
 
+.time{
+    @apply text-gray-500;
+    @apply text-xs;
+}
 
+//repo bookmarks
 
+.repo-details{
+    @apply flex flex-row justify-between items-center gap-5;                                                           
+}
 
-.repos-heading{
-    @apply text-lg  font-semibold text-gray-700 mt-4;
+.repo-stats{
+    @apply flex flex-row gap-5 ;
+}
+
+.repo-stat{
+    @apply text-gray-500;
 }
 
 .repo{
-    @apply bg-dark-custome border border-gray-300/50 rounded-lg shadow-md p-4 m-4;
-    @apply flex flex-col text-white overflow-y-auto;
-    @apply w-full md:w-[600px];
+    @apply bg-white/80 border border-gray-300/50 rounded-lg shadow-md m-4;
+    @apply flex flex-col text-gray-800 gap-2 p-2;
+    @apply h-auto w-full md:w-[600px];
 }
+
 .repo-name{
-    @apply text-lg font-semibold text-gray-700;
+    @apply text-xl font-semibold text-black/90;
+    @apply border-b border-gray-500/50 pb-3;
 }
-.no-bookmarks{
+                                              
+.no-bookmarks{               
     @apply flex flex-col items-center justify-center;
-    @apply sm:m-auto p-5 md:ml-[5rem] xl:ml-[20rem]  p-5 text-gray-500 text-center;
+    @apply sm:m-auto p-5 md:ml-[5rem] xl:ml-[20rem]  p-5 text-gray-500 text-center;     
 }
 
-
-.message{
-    @apply text-sm text-white text-center;
-}
-
-.bookmark-repo button{
-    @apply flex justify-end w-[5rem] text-center;
-    @apply bg-gray-400 border border-gray-300/50 hover:bg-gray-500 rounded-lg shadow-md p-2 m-3 ;
-}
-
-.bookmark-article button{
-    @apply flex justify-end w-[5rem] text-center;
-    @apply  border border-gray-300/50 hover:bg-gray-500 rounded-lg shadow-md p-2 m-3 ;
+.remove-bookmark{
+    @apply ml-[15rem] hover:cursor-pointer;
 }
 .gitpage-link{
-    @apply text-blue-500 hover:text-blue-700;
-    @apply text-sm font-semibold;
-    @apply m-2;
+    @apply cursor-pointer text-white hover:underline;
+    @apply p-2 text-sm;
 }
+
 .homepage-link{
-    @apply text-blue-500 hover:text-blue-700;
-    @apply text-sm font-semibold;
-    @apply m-2;
+    @apply cursor-pointer text-white hover:underline;                                                              
+    @apply p-2 text-sm;                                                                                              
 }

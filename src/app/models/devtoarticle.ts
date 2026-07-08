@@ -7,4 +7,7 @@ export interface DevToArticle {
   comments_count:number;
   reading_time_minutes: number;
   bookmarked?:boolean;
+  description: string;
+  url : string;
+  published_timestamp: string;
 }

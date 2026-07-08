@@ -44,5 +44,8 @@ removeGithub(repo: Repo) {
   this.bookmarkService.saveGithubBookmarks(this.githubBookmarks);
 
 }
+navigateToArticle(url: string) {
+  window.open(url, '_blank');
+}
 
 }

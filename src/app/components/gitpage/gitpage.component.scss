@@ -1,20 +1,44 @@
-.header {
-  @apply w-full p-3 bg-slate-950 border-b border-gray-700;
-  @apply flex flex-col items-center;
+.navbar {
+  @apply w-full h-[6.5%] bg-slate-950 border-b border-gray-200/50 text-white shadow-md;
+  @apply flex flex-row justify-between items-center gap-[60rem] p-2;
   @apply fixed top-0 left-0 z-50;
  
 }
 
 .heading {
-  @apply text-3xl font-bold text-white mb-6;
+  @apply text-xs md:text-lg lg:text-xl font-bold text-center p-2 ;
 }
 
+.nav-right{
+    @apply flex flex-row items-center justify-between gap-5;
+    @apply md:flex-row md:items-center md:justify-between gap-4;
+}
 .searchbar {
   @apply relative w-[420px] max-w-[90%];
 }
 
+.search-btn{
+    @apply ml-[25rem] ;
+}
+
 .search-input {
-  @apply w-full py-3 rounded-lg border border-gray-300;
+  @apply w-full py-1 rounded-lg border border-gray-300;
+  @apply text-black;
+}
+
+.links{
+    @apply flex gap-4 ;
+}
+
+.bookmarkpage-link{
+    @apply cursor-pointer text-white hover:underline;
+    @apply p-2 text-sm;
+
+}
+
+.homepage-link{
+    @apply cursor-pointer text-white hover:underline;
+    @apply p-2 text-sm;
 }
 
 .search-results {
@@ -22,81 +46,72 @@
 }
 
 .no-results {
-  @apply p-5 m-auto text-gray-500 text-center;
+  @apply text-gray-500 text-center;
 }
 .container{
-    @apply bg-slate-950 flex justify-center min-h-screen; 
-    @apply mt-[17rem] p-5;
+    @apply w-full h-[93.5%];
+    @apply py-[70px]  rounded-lg shadow-md;
+    @apply min-h-screen flex flex-col items-center justify-start gap-5;
     
    
 }
-
-
-.body{
-    @apply w-[80%] flex flex-col items-center pt-6  ;
+.user{
+    @apply w-full p-5  rounded-lg shadow-md ml-[15rem];
+    @apply flex flex-row items-start justify-center gap-[1rem];
 }
 
 
 .user-details{
-    @apply w-[50%]  items-center;
+    @apply  flex flex-col justify-start items-start;
 }
-.user{
-    @apply w-full bg-slate-950 rounded-lg shadow-md p-4 mt-4;
-}
+
 
 .info{
     @apply text-sm text-gray-300/40 mt-4;
 }
 .user-info{
-    @apply flex  flex-row items-center;
+    @apply w-[20rem] h-[auto]  shadow-md;
+    @apply flex flex-col items-center px-1 gap-2;
 }
 .profile-image{
-    @apply w-64 h-64 rounded-full mr-4;
+    @apply w-64 h-64 rounded-full ;
 }
 .username{
-    @apply text-sm  text-red-500;
+    @apply text-lg text-gray-500;
 }
 .name{
-    @apply text-lg font-semibold text-gray-700;
+    @apply text-xl font-semibold text-white;
 }
 .bio{
-    @apply p-3 text-gray-600;
+    @apply  text-gray-600;
 }
 .stats{
-    @apply text-sm bg-red-50 text-red-500 p-2 rounded-lg mt-2;
-    @apply w-[400px];
+    @apply text-xs text-gray-500 mt-2;
     @apply flex justify-between shadow-md p-1 ;
 }
-.repos-heading{
-    @apply text-lg  font-semibold text-gray-700 mt-4;
+.number{
+    @apply font-semibold text-xs text-white;
+}
+
+.repo-details{
+    @apply flex flex-row justify-between items-center gap-5;
+}
+.repo-stats{
+    @apply flex flex-row gap-5 text-gray-500;
 }
 
 .repo{
-    @apply bg-dark-custome border border-gray-300/50 rounded-lg shadow-md p-4 mt-2;
-    @apply flex flex-col text-white;
-    @apply w-full md:w-[600px];
+    @apply bg-white/80 border border-gray-300/50 rounded-lg shadow-md mt-2;
+    @apply flex flex-col text-gray-800 gap-2 p-2;
+    @apply h-auto w-full md:w-[600px];
 }
 .repo-name{
-    @apply text-lg font-semibold text-gray-700;
+    @apply text-xl font-semibold text-black/90;
+    @apply border-b border-gray-500/50 pb-3;
 }
 
 .bookmark{
     @apply text-white h-5 w-5;
 
     
-}
-.link{
-    @apply flex gap-4 mt-4;
-}
-
-.bookmarkpage-link{
-    @apply text-gray-300 hover:text-white;
-    @apply mt-4;
-    @apply text-lg font-semibold;
-}
-
-.homepage-link{
-    @apply text-gray-300 hover:text-white;
-    @apply mt-4 ml-5;
-    @apply text-lg font-semibold;
 }

@@ -6,4 +6,5 @@ export interface Repo {
   forks_count: number;
   language: string;
   bookmarked?: boolean ;
+  html_url: string;
 }

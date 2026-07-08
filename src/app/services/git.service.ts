@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import { GitProfile } from "../models/gitprofile";
 import { Repo } from "../models/repo";
 
+
 @Injectable({
   providedIn: 'root',
 })
@@ -12,12 +13,10 @@ export class GitService {
 
   constructor(private http: HttpClient) {}
 
- 
-
   getUsers(username: string): Observable<GitProfile> {
     const apiUrl = this.apiUrl.replace(':user', username);
 
-    return this.http.get<GitProfile>(apiUrl);
+    return this.http.get<GitProfile>(apiUrl,);
   }
 
   getRepos(username: string): Observable<Repo[]> {

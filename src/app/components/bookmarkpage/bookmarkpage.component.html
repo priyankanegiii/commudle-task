@@ -1,73 +1,85 @@
-<div class="bookmark-page">
-  <div class="header">
-    <h2 class="heading">Your Bookmarks</h2>
-    <div class="links">
-      <a routerLink="/gitpage" class="gitpage-link"> Git Page  </a>
-      <a routerLink="/" class="homepage-link"> Home Page  </a>
-    </div>
+<div class="navbar">
+  <h2 class="heading">Your Bookmarks</h2>
+  <div class="links">
+    <a routerLink="/gitpage" class="gitpage-link"> Git Page </a>
+    <a routerLink="/" class="homepage-link"> Home Page </a>
   </div>
+</div>
 
-  <div class="container">
-    @if (githubBookmarks.length <= 0 && articleBookmarks.length <= 0) {
-      <div class="no-bookmarks">
-        <p class="message">You have not added any bookmarks yet.</p>
-      </div>
-    } @else {
-      @for (repo of githubBookmarks; track repo.id) {
-        <div class="repo">
-          <h4 class="repo-name">{{ repo.name }}</h4>
-          <p class="repo-description">{{ repo.description }}</p>
+<div class="container">
+  @if (githubBookmarks.length <= 0 && articleBookmarks.length <= 0) {
+    <div class="no-bookmarks">
+      <p class="message">You have not added any bookmarks yet.</p>
+    </div>
+  } @else {
+    @for (repo of githubBookmarks; track repo.id) {
+      <div class="repo">
+        <h4 class="repo-name">{{ repo.name }}</h4>
+        <p class="repo-description">{{ repo.description }}</p>
 
-          <div class="repo-stats">
-            <p class="repo-stat">Stars: {{ repo.stargazers_count }}</p>
-            <p class="repo-stat">Forks: {{ repo.forks_count }}</p>
-            <p class="repo-stat">Language: {{ repo.language }}</p>
-          </div>
-          <div class="bookmark-repo">
-            <button (click)="removeGithub(repo)">remove</button>
-            <!-- <i
-        class="fa-regular fa-bookmark bookmark"
-        (click)="removeGithub(repo)"
-      ></i> -->
+        <div class="repo-stats">
+          <p class="repo-stat">Stars: {{ repo.stargazers_count }}</p>
+          <p class="repo-stat">Forks: {{ repo.forks_count }}</p>
+          <p class="repo-stat">Language: {{ repo.language }}</p>
+          <div  (click)="removeGithub(repo)" class="remove-bookmark">
+            <i class="fa-solid fa-trash"></i>
           </div>
         </div>
-      }
+        
+      </div>
+    }
 
-      @for (article of articleBookmarks; track article.id) {
-        <div class="card">
-          <div>
+    @for (article of articleBookmarks; track article.id) {
+      <div class="article">
+        <div>
+          @if (article.bookmarked && article.cover_image) {
             <img
               src="{{ article.cover_image }}"
               alt="profile image"
               class="profile-image"
+              (click)="navigateToArticle(article.url)"
             />
+          }
+        </div>
+        <div class="content" (click)="navigateToArticle(article.url)">
+          <h2 class="title">{{ article.title }}</h2>
+          <p class="description">{{ article.description }}</p>
+        </div>
+        <div class="tags">
+          @for (tag of article.tag_list; track tag) {
+            <span class="tag">#{{ tag }}</span>
+          }
+        </div>                                          
+
+        <div class="footer">
+          <div class="reactions">
+            <p class="reaction">
+              <i class="fa-solid fa-hands-clapping"></i>
+              {{ article.public_reactions_count }} reactions
+            </p>
+            <p class="reaction">
+              <i class="fa-solid fa-comment"></i>
+              {{ article.comments_count }} comments
+            </p>
           </div>
-          <div class="content">
-            <h2 class="title">{{ article.title }}</h2>
-            <div class="tags">
-              @for (tag of article.tag_list; track tag) {
-                <span class="tag">#{{ tag }}</span>
-              }
-            </div>
-          </div>
-          <div class="footer">
-            <div class="reactions">
-              <p class="reaction">
-                {{ article.public_reactions_count }} reactions
-              </p>
-              <p class="reaction">{{ article.comments_count }} comments</p>
-            </div>
+          <div class="reading-time-bookmark">
+            <p class="time">
+              published on
+              {{
+                article.published_timestamp.slice(8, 10) +
+                  "-" +
+                  article.published_timestamp.slice(5, 7) +
+                  "-" +
+                  article.published_timestamp.slice(0, 4)
+              }}
+            </p>
             <p class="time">{{ article.reading_time_minutes }} min read</p>
-          </div>
-          <div class="bookmark-article">
-            <button (click)="removeArticle(article)">remove</button>
-            <!-- <i
-        class="fa-regular fa-bookmark bookmark"
-        (click)="removeArticle(article)"
-      ></i> -->
+            <div (click)="removeArticle(article)" >
+              <i class="fa-solid fa-trash"></i>
+            </div>
           </div>
         </div>
-      }
+      </div>
     }
-  </div>
+  }
 </div>

@@ -5,5 +5,6 @@ export interface GitProfile {
     location : string;
     followers : number;
     following : number;
+    html_url : string;
 
 }

@@ -4,7 +4,7 @@
 }
 
 .heading{
-    @apply text-2xl font-bold text-center p-2;
+    @apply text-xs md:text-lg lg:text-xl font-bold text-center p-2;
 }
 
 .filter{
@@ -15,7 +15,13 @@
     @apply  text-white bg-slate-950  hover:cursor-pointer;
 
 }
-
+.nav-right{
+    @apply flex flex-row items-center justify-between gap-5;
+    @apply md:flex-row md:items-center md:justify-between gap-4;
+}
+.links{
+    @apply flex gap-4 ;
+}
 .gitpage-link{
     @apply cursor-pointer text-white hover:underline;
     @apply p-2 text-sm;
@@ -28,29 +34,34 @@
 
 }
 .body{
-   
-    @apply m-5 p-4  rounded-lg shadow-md;
-    @apply h-screen w-[80%] overflow-y-auto;
+    @apply w-full;
+    @apply mt-5 p-1  rounded-lg shadow-md;
+    @apply h-screen overflow-y-auto;
     @apply flex flex-col  items-center;
 
 }
 
 .card{
-    @apply bg-gray-400 border border-gray-300/50 rounded-lg shadow-md p-4 m-4 ;
+    @apply bg-gray-200 border border-gray-300/50 rounded-lg shadow-md p-4 m-4 ;
     @apply flex flex-col ;
-    @apply h-[500px] w-full max-w-4xl;
+    @apply h-auto w-full max-w-4xl;
     @apply transition-transform transform hover:scale-105;
 }
 .profile-image{
-    @apply  h-56 w-[95%] m-auto object-cover rounded-lg mb-4;
+    @apply  h-56 w-[95%] m-auto object-cover rounded-lg ;
 }
 
 
-.title{
-    @apply text-2xl font-bold text-gray-800 p-4;
-}
+
 .content{
-    @apply text-center;
+    @apply flex flex-col gap-2;
+}
+.title{
+    @apply text-xl font-bold text-gray-800 px-5 mt-1;
+}
+
+.description{
+    @apply text-gray-700 px-5;
 }
 
 .tags{
@@ -59,17 +70,12 @@
 
 .tag{
 
-    @apply hover:text-blue-800 ;
+    @apply text-sm text-gray-600 hover:text-blue-800 ;
     @apply hover:border-blue-200 hover:cursor-pointer;
 }
 .footer{
     @apply flex justify-between items-center;
-    @apply mt-auto;
-}
-
-
-.links{
-    @apply flex gap-4 ;
+    @apply mt-5;
 }
 
 
@@ -79,20 +85,21 @@
 }
 .reaction{
     @apply p-1 text-sm ;
-    @apply  hover:text-black ;
+    @apply  hover:text-black/80 hover:bg-gray-300/50 hover:rounded-lg;
     @apply  hover:cursor-pointer;
 }
 
+.reading-time-bookmark{
+    @apply flex justify-between items-center;
+    @apply mx-5 gap-5;
+}
 .time{
     @apply text-gray-500;
     @apply text-xs;
 }
 
 
-.side{
-    @apply flex flex-row items-center justify-between gap-5;
-    @apply md:flex-row md:items-center md:justify-between gap-4;
-}
+
 
 
 .bookmark{
