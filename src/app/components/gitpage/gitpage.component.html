@@ -34,7 +34,7 @@
   } @else {
     <div class="user">
       <div class="user-info" (click)="navigateToUserProfile(gitProfile.html_url)">
-        <div>
+        <div class="user-img">
           <img
             [src]="gitProfile?.avatar_url"
             alt="profile image"
@@ -52,7 +52,7 @@
           <div class="stats">
             <p class="stat">
               
-              <span class="number"><i class="fa-solid fa-users"></i> {{ gitProfile.followers }}</span> followers
+              <span class="number">{{ gitProfile.followers }}</span> followers
             </p>
             <p class="stat">
               <span class="number">{{ gitProfile.following }}</span> following
